@@ -7,7 +7,7 @@
 				"navigationStyle": "custom"
 			}
 		}, {
-			"path": "pages/web-view/webview",
+			"path": "pages/web-view/web-view",
 			"style": {
 				"navigationStyle": "custom"
 			}

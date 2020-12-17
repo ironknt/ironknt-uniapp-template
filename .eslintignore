@@ -1,0 +1,8 @@
+dist
+node_modules
+uview-ui
+common
+components
+main.js
+App.vue
+*.json
