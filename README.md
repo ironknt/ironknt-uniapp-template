@@ -1,6 +1,13 @@
 # test
 
-一个自定义uni-app模板，使用vuex，sass，uView组件库，flyio
+一个自定义uni-app模板
+
+#### 技术栈
+* vuex
+* sass
+* uView组件库
+* flyio
+* eslint
 
 ## 安装
 ```
