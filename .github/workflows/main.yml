@@ -28,6 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: build
         run: |
+          sudo apt-get update
           sudo apt-get install node
           npm install
 
