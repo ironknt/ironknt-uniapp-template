@@ -6,3 +6,5 @@ components
 main.js
 App.vue
 *.json
+babel.config.js
+postcss.config.js

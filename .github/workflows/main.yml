@@ -30,11 +30,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install nodejs
-          node -v
           npm install
+          npm run lint
+          npm run build
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          npm run serve,
-          npm run build.
+          node -v
