@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: node:alpine
+    runs-on: ubuntu-18.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -27,7 +27,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: build
-        run: npm install
+        run: |
+          apt-get install node
+          npm install
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
