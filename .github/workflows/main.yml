@@ -20,21 +20,27 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-18.04
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
 
-      # Runs a single command using the runners shell
-      - name: build
-        run: |
-          sudo apt-get update
-          sudo apt-get install nodejs
-          npm install
-          npm run lint
-          npm run build
+      - name: cacheApp
+        id: uniCacheApp
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/cache
+            !~/cache/exclude
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          node -v
+      - name: pre
+        run: npm install
+      
+      - name: pre
+        run: npm lint
+
+      - name: pre
+        run: npm run build
