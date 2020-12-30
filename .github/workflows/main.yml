@@ -21,11 +21,17 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      # 设置node环境12
       - name: Setup Node
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: '10.x'
+          node-version: '12'
 
+      # 缓存依赖
       - name: cacheApp
         id: uniCacheApp
         uses: actions/cache@v2
@@ -36,11 +42,14 @@ jobs:
             **/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
+      # install
       - name: pre
         run: npm install
       
-      - name: pre
+      # lint
+      - name: lint
         run: npm run lint
 
-      - name: pre
+      # build
+      - name: build
         run: npm run build
