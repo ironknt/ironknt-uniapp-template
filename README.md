@@ -25,9 +25,9 @@ npm run build
 ```
 
 ### uni-app
-See [Configuration Reference](https://uniapp.dcloud.io/).
+> See [Configuration Reference](https://uniapp.dcloud.io/).
 
 ### 组件库
-See [uView](https://uviewui.com/components/intro.html).
+> See [uView](https://uviewui.com/components/intro.html).
 
 ### 
